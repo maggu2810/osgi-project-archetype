@@ -1,0 +1,12 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<FindBugsFilter>
+  <Match>
+    <Class name="~.*${symbol_escape}.*_" />
+  </Match>
+  <Match>
+    <Field type="org.slf4j.Logger" />
+    <Bug pattern="SE_BAD_FIELD" />
+  </Match>
+</FindBugsFilter>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd" name="de.maggu2810.playground.osgi"
+    xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <fileSets>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>quality/findbugs</directory>
+      <includes>
+        <include>**/*.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>quality/checkstyle</directory>
+      <includes>
+        <include>**/*.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>quality/pmd</directory>
+      <includes>
+        <include>**/*.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory></directory>
+      <includes>
+        <include>.gitignore</include>
+        <include>README.md</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+  <modules>
+    <module id="${rootArtifactId}.apps" dir="apps" name="${rootArtifactId}.apps">
+      <modules>
+        <module id="${rootArtifactId}.app.demo" dir="demo" name="${rootArtifactId}.app.demo">
+          <fileSets>
+            <fileSet filtered="true" encoding="UTF-8">
+              <directory>runtime</directory>
+              <includes>
+                <include>**/*.xml</include>
+              </includes>
+            </fileSet>
+            <fileSet encoding="UTF-8">
+              <directory>runtime/fileinstall</directory>
+              <includes>
+                <include>**/*.keep</include>
+              </includes>
+            </fileSet>
+            <fileSet encoding="UTF-8">
+              <directory></directory>
+              <includes>
+                <include>.gitignore</include>
+                <include>demo.bndrun</include>
+              </includes>
+            </fileSet>
+          </fileSets>
+        </module>
+      </modules>
+    </module>
+    <module id="${rootArtifactId}.bundles" dir="bundles" name="${rootArtifactId}.bundles">
+      <modules>
+        <module id="${rootArtifactId}.bundles.demo" dir="demo" name="${rootArtifactId}.bundles.demo">
+          <fileSets>
+            <fileSet filtered="true" packaged="true" encoding="UTF-8">
+              <directory>src/main/java</directory>
+              <includes>
+                <include>**/*.java</include>
+              </includes>
+            </fileSet>
+          </fileSets>
+        </module>
+      </modules>
+    </module>
+    <module id="${rootArtifactId}.deps" dir="deps" name="${rootArtifactId}.deps">
+      <modules>
+        <module id="${rootArtifactId}.deps.compile" dir="compile" name="${rootArtifactId}.deps.compile" />
+        <module id="${rootArtifactId}.deps.runtime" dir="runtime" name="${rootArtifactId}.deps.runtime" />
+        <module id="${rootArtifactId}.deps.test-compile" dir="test-compile" name="${rootArtifactId}.deps.test-compile" />
+        <module id="${rootArtifactId}.deps.test-runtime" dir="test-runtime" name="${rootArtifactId}.deps.test-runtime" />
+      </modules>
+    </module>
+    <module id="${rootArtifactId}.karaf" dir="karaf" name="${rootArtifactId}.karaf">
+      <modules>
+        <module id="${rootArtifactId}.karaf.features" dir="features" name="${rootArtifactId}.karaf.features">
+          <modules>
+            <module id="${rootArtifactId}.karaf.features.demo" dir="demo" name="${rootArtifactId}.karaf.features.demo">
+              <fileSets>
+                <fileSet filtered="true" encoding="UTF-8">
+                  <directory>src/main/feature</directory>
+                  <includes>
+                    <include>**/*.xml</include>
+                  </includes>
+                </fileSet>
+              </fileSets>
+            </module>
+          </modules>
+        </module>
+        <module id="${rootArtifactId}.karaf.dists" dir="dists" name="${rootArtifactId}.karaf.dists">
+          <modules>
+            <module id="${rootArtifactId}.karaf.dists.demo" dir="demo" name="${rootArtifactId}.karaf.dists.demo" />
+          </modules>
+        </module>
+      </modules>
+    </module>
+  </modules>
+</archetype-descriptor>

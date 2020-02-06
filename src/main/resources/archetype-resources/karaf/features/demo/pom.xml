@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>${groupId}.karaf.features</groupId>
+    <artifactId>${rootArtifactId}.karaf.features</artifactId>
+    <version>${version}</version>
+  </parent>
+
+  <artifactId>${artifactId}</artifactId>
+  <packaging>feature</packaging>
+
+  <dependencies>
+    <!-- Repositories -->
+    <dependency>
+      <groupId>org.apache.karaf.features</groupId>
+      <artifactId>standard</artifactId>
+      <version>${karaf.version}</version>
+      <classifier>features</classifier>
+      <type>xml</type>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Reactor bundles -->
+    <dependency>
+      <groupId>${groupId}.bundles</groupId>
+      <artifactId>${rootArtifactId}.bundles.demo</artifactId>
+      <version>${version}</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+</project>

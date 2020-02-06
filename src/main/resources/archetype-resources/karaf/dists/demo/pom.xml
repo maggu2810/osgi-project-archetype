@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>${groupId}.karaf.dists</groupId>
+    <artifactId>${rootArtifactId}.karaf.dists</artifactId>
+    <version>${version}</version>
+  </parent>
+
+  <artifactId>${artifactId}</artifactId>
+  <packaging>karaf-assembly</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>${groupId}.karaf.features</groupId>
+      <artifactId>${rootArtifactId}.karaf.features.demo</artifactId>
+      <version>${version}</version>
+      <classifier>features</classifier>
+      <type>xml</type>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.karaf.tooling</groupId>
+        <artifactId>karaf-maven-plugin</artifactId>
+        <configuration>
+          <installedFeatures>
+            <feature>wrapper</feature>
+          </installedFeatures>
+          <startupFeatures>
+            <feature>eventadmin</feature>
+          </startupFeatures>
+          <bootFeatures>
+            <feature>jaas</feature>
+            <feature>shell</feature>
+            <feature>shell-compat</feature>
+            <feature>ssh</feature>
+            <feature>management</feature>
+            <feature>bundle</feature>
+            <feature>config</feature>
+            <feature>deployer</feature>
+            <feature>diagnostic</feature>
+            <feature>feature</feature>
+            <feature>instance</feature>
+            <feature>kar</feature>
+            <feature>log</feature>
+            <feature>package</feature>
+            <!-- <feature>scr</feature> -->
+            <feature>service</feature>
+            <feature>system</feature>
+            <feature>webconsole</feature>
+
+            <feature>my-demo</feature>
+          </bootFeatures>
+          <archiveZip>false</archiveZip>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

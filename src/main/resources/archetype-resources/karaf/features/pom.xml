@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>${groupId}.karaf</groupId>
+    <artifactId>${rootArtifactId}.karaf</artifactId>
+    <version>${version}</version>
+  </parent>
+
+  <groupId>${groupId}.karaf.features</groupId>
+  <artifactId>${artifactId}</artifactId>
+  <packaging>pom</packaging>
+
+  <dependencies>
+    <!-- Distribution -->
+    <dependency>
+      <groupId>org.apache.karaf.features</groupId>
+      <artifactId>framework</artifactId>
+      <version>${karaf.version}</version>
+      <type>kar</type>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.karaf.tooling</groupId>
+          <artifactId>karaf-maven-plugin</artifactId>
+          <configuration>
+            <startLevel>80</startLevel>
+            <aggregateFeatures>true</aggregateFeatures>
+          </configuration>
+          <executions>
+            <execution>
+              <id>compile</id>
+              <goals>
+                <goal>features-generate-descriptor</goal>
+              </goals>
+              <phase>generate-resources</phase>
+            </execution>
+            <execution>
+              <id>verify</id>
+              <goals>
+                <goal>verify</goal>
+              </goals>
+              <phase>process-resources</phase>
+              <configuration>
+                <descriptors>
+                  <descriptor>mvn:org.apache.karaf.features/framework/${karaf.version}/xml/features</descriptor>
+                  <descriptor>mvn:org.apache.karaf.features/standard/${karaf.version}/xml/features</descriptor>
+                  <descriptor>file:${project.build.directory}/feature/feature.xml</descriptor>
+                </descriptors>
+                <distribution>org.apache.karaf.features:framework</distribution>
+                <javase>${my.java.version}</javase>
+                <framework>
+                  <feature>framework</feature>
+                </framework>
+                <features>
+                  <feature>my-*</feature>
+                </features>
+                <verifyTransitive>false</verifyTransitive>
+                <ignoreMissingConditions>true</ignoreMissingConditions>
+                <fail>first</fail>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.karaf.tooling</groupId>
+        <artifactId>karaf-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
