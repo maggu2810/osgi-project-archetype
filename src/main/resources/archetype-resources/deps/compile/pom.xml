@@ -49,6 +49,14 @@
     </dependency>
     <!-- END: OSGi API -->
 
+    <!-- BEG: bnd annotations -->
+    <dependency>
+      <groupId>biz.aQute.bnd</groupId>
+      <artifactId>biz.aQute.bnd.annotation</artifactId>
+      <version>${bnd.version}</version>
+    </dependency>
+    <!-- END: bnd annotations -->
+
     <!-- BEG: Enterprise API -->
     <dependency>
       <groupId>org.apache.felix</groupId>
@@ -122,16 +130,9 @@
       <version>2.9.0</version>
     </dependency>
     <dependency>
-      <!-- You should prefer using the API only... -->
-      <groupId>org.apache.johnzon</groupId>
-      <artifactId>johnzon-mapper</artifactId>
-      <version>1.1.12</version>
-    </dependency>
-    <dependency>
-      <!-- You should prefer using the API only... -->
-      <groupId>com.google.code.gson</groupId>
-      <artifactId>gson</artifactId>
-      <version>2.1</version>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-jsonb_1.0_spec</artifactId>
+      <version>1.1</version>
     </dependency>
     <!-- END: JSON -->
 

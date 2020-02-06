@@ -449,17 +449,23 @@
       <artifactId>geronimo-json_1.1_spec</artifactId>
       <version>1.2</version>
     </dependency>
+    <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-jsonb_1.0_spec</artifactId>
+      <version>1.1</version>
+    </dependency>
 
     <!-- Apache Johnzon JSONP implementation -->
     <dependency>
       <groupId>org.apache.johnzon</groupId>
       <artifactId>johnzon-core</artifactId>
-      <version>1.1.12</version>
+      <version>1.2.3</version>
     </dependency>
+    <!-- Apache Johnzon JSONB implementation -->
     <dependency>
       <groupId>org.apache.johnzon</groupId>
-      <artifactId>johnzon-mapper</artifactId>
-      <version>1.1.12</version>
+      <artifactId>johnzon-jsonb</artifactId>
+      <version>1.2.3</version>
     </dependency>
 
     <!-- Gson -->
