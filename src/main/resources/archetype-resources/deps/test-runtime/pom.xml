@@ -13,26 +13,11 @@
 
   <dependencies>
     <dependency>
-      <groupId>${groupId}.deps</groupId>
-      <artifactId>${rootArtifactId}.deps.test-compile</artifactId>
-      <version>${version}</version>
+      <groupId>de.maggu2810.osgideps</groupId>
+      <artifactId>de.maggu2810.osgideps.test-runtime</artifactId>
       <type>pom</type>
+      <version>${osgideps.version}</version>
       <scope>compile</scope>
-      <exclusions>
-        <exclusion>
-          <groupId>junit</groupId>
-          <artifactId>junit</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.slf4j</groupId>
-          <artifactId>slf4j-simple</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.osgi</groupId>
-      <artifactId>osgi.enroute.junit.wrapper</artifactId>
-      <version>4.12.0</version>
     </dependency>
   </dependencies>
 

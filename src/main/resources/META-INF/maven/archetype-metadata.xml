@@ -49,8 +49,17 @@
             <fileSet encoding="UTF-8">
               <directory></directory>
               <includes>
-                <include>.gitignore</include>
                 <include>demo.bndrun</include>
+              </includes>
+            </fileSet>
+          </fileSets>
+        </module>
+        <module id="${rootArtifactId}.app.ui" dir="ui" name="${rootArtifactId}.app.ui">
+          <fileSets>
+            <fileSet filtered="true" encoding="UTF-8">
+              <directory></directory>
+              <includes>
+                <include>*.bndrun</include>
               </includes>
             </fileSet>
           </fileSets>
@@ -65,6 +74,22 @@
               <directory>src/main/java</directory>
               <includes>
                 <include>**/*.java</include>
+              </includes>
+            </fileSet>
+          </fileSets>
+        </module>
+        <module id="${rootArtifactId}.bundles.ui" dir="ui" name="${rootArtifactId}.bundles.ui">
+          <fileSets>
+            <fileSet filtered="true" packaged="true" encoding="UTF-8">
+              <directory>src/main/java</directory>
+              <includes>
+                <include>**/*.java</include>
+              </includes>
+            </fileSet>
+            <fileSet filtered="true" encoding="UTF-8">
+              <directory></directory>
+              <includes>
+                <include>bnd.bnd</include>
               </includes>
             </fileSet>
           </fileSets>

@@ -10,8 +10,8 @@ mvn clean install
 
 ```
 mvn archetype:generate \
-  -DarchetypeGroupId=de.maggu2810.playground.osgi \
-  -DarchetypeArtifactId=de.maggu2810.playground.osgi-archetype \
+  -DarchetypeGroupId=de.maggu2810.maven.archetypes \
+  -DarchetypeArtifactId=osgi-project-archetype \
   -DarchetypeVersion=1.0.0-SNAPSHOT \
   -DgroupId=tmp -DartifactId=tmp -Dversion=1.0.0-SNAPSHOT
 ```
