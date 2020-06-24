@@ -4,7 +4,7 @@
 
   <groupId>de.maggu2810.maven.archetypes</groupId>
   <artifactId>osgi-project-archetype</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>0.0.2</version>
   <packaging>maven-archetype</packaging>
 
   <name>OSGi Project Archetype</name>
@@ -20,7 +20,7 @@
   <scm>
     <connection>scm:git:git@github.com:maggu2810/osgi-project-archetype.git</connection>
     <developerConnection>scm:git:git@github.com:maggu2810/osgi-project-archetype.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>osgi-project-archetype-0.0.2</tag>
     <url>https://github.com/maggu2810/osgi-project-archetype</url>
   </scm>
 
