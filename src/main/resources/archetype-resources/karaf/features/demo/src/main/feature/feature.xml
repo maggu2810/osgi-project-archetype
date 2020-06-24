@@ -6,7 +6,7 @@
 
   <feature name="my-demo" description="..." version='${symbol_dollar}{project.version}'>
     <details>...</details>
-    <bundle>mvn:${groupId}.bundles/${groupId}.bundles.demo/${symbol_dollar}{project.version}</bundle>
+    <bundle>mvn:${groupId}.bundles/${rootArtifactId}.bundles.demo/${symbol_dollar}{project.version}</bundle>
     <feature dependency="true">scr</feature>
   </feature>
 
